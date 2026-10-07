@@ -23,3 +23,25 @@ SQL Feature Engineering & Controlled Undersampling (10% non-fraud, 100% fraud)
                      │
                      ▼
        Model Evaluation (`ML.EVALUATE`) & Test Inference (`ML.PREDICT`)
+
+
+Key Highlights
+In-Warehouse Compute: Zero data movement out of BigQuery to external Python environments.
+
+Class Skew Handling: Addressed severe class imbalance (<0.1% fraud rate) via deterministic sampling and transaction rail isolation (TRANSFER and CASH_OUT).
+
+Feature Engineering: Built domain-specific balance liquidation indicators (origzeroFlag) and balance error metrics (amountError) in SQL.
+
+Champion Model: The Boosted Tree model achieved superior ROC-AUC and F1 scores over baseline Logistic Regression, capturing non-linear interactions between high transaction amounts and sender balance depletion.
+
+Repository Structure
+fraud_detection_bigquery_ml.ipynb: The end-to-end documented Colab notebook with SQL queries, narrative, and output interpretations.
+
+Tech Stack
+Cloud Platform: Google Cloud Platform (GCP)
+
+Data Warehouse: Google BigQuery
+
+Modeling Engine: BigQuery ML (BQML)
+
+Languages: SQL (GoogleSQL), Python (Google Cloud SDK orchestration)
